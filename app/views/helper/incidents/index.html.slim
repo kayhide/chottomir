@@ -1,0 +1,6 @@
+.list-group.mt-4
+  - @incidents.each do |incident|
+    = link_to [:edit, :helper, incident], class: %w(list-group-item) do
+      = render "common/category_icon", text: incident.category.text, fw: true
+
+      .float-right = incident.created_at.strftime "%m/%d %H:%M"

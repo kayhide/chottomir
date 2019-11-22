@@ -1,0 +1,5 @@
+- if current_user
+  .text-right.mt-3
+    - if controller.class.parent == ::Helper
+      i.fas.fa-user-nurse.mr-2
+    span = current_user.username

@@ -1,0 +1,20 @@
+- if @incident.errors.any?
+  .alert.alert-warning
+    p Something is wrong
+
+.row.justify-content-center.mt-4
+  .col-6
+    .card.text-center
+      .card-body.bg-helper
+        h5.card-title = @incident.category.text
+        = render "common/category_icon", text: @incident.category.text, large: true
+
+.w-100.mt-3
+
+= form_for [:helper, @incident] do |f|
+  = f.hidden_field :category_id
+  .form-group
+    = f.label :note
+    = f.text_area :note, rows: 6, class: %w(form-control)
+  = f.button type: "submit", class: %w(btn btn-block btn-lg btn-info) do
+    i.fas.fa-paper-plane

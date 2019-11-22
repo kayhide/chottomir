@@ -16,3 +16,8 @@ User.find_or_create_by(
   username: "キリコ",
   email: "kiriko@chottomir.test"
 )
+
+Category.find_or_create_by(text: "Drug")
+Category.find_or_create_by(text: "Shot")
+Category.find_or_create_by(text: "Poop")
+Category.find_or_create_by(text: "Accident")

@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   namespace :helper do
     resource only: [:show], controller: :home
+    resources :incidents
   end
 end

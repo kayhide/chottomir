@@ -1,0 +1,12 @@
+- cls = []
+- cls.push "fa-3x" if defined?(large) && large
+- cls.push "fa-fw" if defined?(fw) && fw
+- case text
+- when "Drug"
+  i.fas.fa-pills class=cls
+- when "Shot"
+  i.fas.fa-syringe class=cls
+- when "Poop"
+  i.fas.fa-poop class=cls
+- when "Accident"
+  i.fas.fa-exclamation class=cls

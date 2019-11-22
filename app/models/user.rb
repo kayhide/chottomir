@@ -1,5 +1,5 @@
-# coding: utf-8
 class User < ApplicationRecord
+  has_many :incidents
 
   def self.pinoko
     find_by(

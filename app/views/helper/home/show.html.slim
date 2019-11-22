@@ -1,31 +1,8 @@
-.text-right.mt-3
-  i.fas.fa-user-nurse
-  span.ml-2 = current_user.username
-
 .row.align-items-center.mt-4
-  .col
-    .card.text-center
-      .card-body.bg-helper
-        h5.card-title Drug
-        = link_to [:helper], class: %w(stretched-link) do
-          i.fas.fa-pills.fa-3x
-  .col
-    .card.text-center
-      .card-body.bg-helper
-        h5.card-title Shot
-        = link_to [:helper], class: %w(stretched-link) do
-          i.fas.fa-syringe.fa-3x
-  .w-100.mt-3
-  .col
-    .card.text-center
-      .card-body.bg-helper
-        h5.card-title Poop
-        = link_to [:helper], class: %w(stretched-link) do
-          i.fas.fa-poop.fa-3x
-  .col
-    .card.text-center
-      .card-body.bg-helper
-        h5.card-title Accident
-        = link_to [:helper], class: %w(stretched-link) do
-          i.fas.fa-exclamation.fa-3x
-  .w-100.mt-3
+  - %w(Drug Shot Poop Accident).each do |text|
+    .col-6.mt-3
+      .card.text-center
+        .card-body.bg-helper
+          h5.card-title = text
+          = link_to [:new, :helper, :incident, { category: text }], class: %w(stretched-link) do
+            = render "common/category_icon", text: text, large: true
