@@ -16,6 +16,7 @@ html
         span.navbar-toggler-icon
       div.navbar-collapse.collapse id="navbarCollapse" style=""
         == render 'layouts/menu'
-    .container.rounded
+    .container.vh-100
       == yield
+    == render 'layouts/bottom_menu'
 

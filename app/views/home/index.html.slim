@@ -1,2 +1,14 @@
-h1 Home#index
-p Find me in app/views/home/index.html.slim
+.row.align-items-center.h-100
+  .col
+    .card.text-center
+      .card-body.bg-helper
+        h5.card-title Helper
+        = link_to "#", class: %w(stretched-link) do
+          i.fas.fa-user-nurse.fa-3x
+
+  .col
+    .card.text-center
+      .card-body.bg-doctor
+        h5.card-title Doctor
+        = link_to "#", class: %w(stretched-link) do
+          i.fas.fa-user-md.fa-3x
