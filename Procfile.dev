@@ -1,0 +1,2 @@
+web: rails server $([[ -n "$BINDING" ]] && echo -b "$BINDING")
+webpack: bin/webpack-dev-server
