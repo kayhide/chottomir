@@ -2,7 +2,7 @@
   - %w(Drug Shot Poop Accident).each do |text|
     .col-6.mt-3
       .card.text-center
-        .card-body.bg-helper
+        .card-body class="bg-#{text.downcase}"
           h5.card-title = text
           = link_to [:new, :helper, :incident, { category: text }], class: %w(stretched-link) do
             = render "common/category_icon", text: text, large: true

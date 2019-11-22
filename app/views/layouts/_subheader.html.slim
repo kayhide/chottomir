@@ -1,5 +1,11 @@
-- if current_user
-  .text-right.mt-3
+- if current_user && [::Helper, ::Doctor].include?(controller.class.parent)
+  .float-right.mt-2
     - if controller.class.parent == ::Helper
-      i.fas.fa-user-nurse.mr-2
-    span = current_user.username
+      .bg-helper.rounded.px-2
+        i.fas.fa-user-nurse.mr-2
+        = current_user.username
+    - if controller.class.parent == ::Doctor
+      .bg-doctor.rounded.px-2
+        i.fas.fa-user-md.mr-2
+        = current_user.username
+  .clearfix

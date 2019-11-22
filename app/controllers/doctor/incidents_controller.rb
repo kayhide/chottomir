@@ -1,4 +1,5 @@
-class Helper::IncidentsController < HelperController
+class Doctor::IncidentsController < DoctorController
+  before_action :set_helper
   before_action :set_incident, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -21,7 +22,7 @@ class Helper::IncidentsController < HelperController
     @incident.user_id = current_user_id
 
     if @incident.save
-      redirect_to [:helper, :incidents], notice: 'Incident was successfully created.'
+      redirect_to [:doctor, :incidents], notice: 'Incident was successfully created.'
     else
       render :new
     end
@@ -29,7 +30,7 @@ class Helper::IncidentsController < HelperController
 
   def update
     if @incident.update(incident_params)
-      redirect_to [:helper, :incidents], notice: 'Incident was successfully updated.'
+      redirect_to [:doctor, :incidents], notice: 'Incident was successfully updated.'
     else
       render :edit
     end
@@ -37,10 +38,14 @@ class Helper::IncidentsController < HelperController
 
   def destroy
     @incident.destroy
-    redirect_to [:helper, :incidents], notice: 'Incident was successfully destroyed.'
+    redirect_to [:doctor, :incidents], notice: 'Incident was successfully destroyed.'
   end
 
   private
+
+  def set_helper
+    @helper = User.find_by(id: params[:helper_id])
+  end
 
   def set_incident
     @incident = Incident.find(params[:id])

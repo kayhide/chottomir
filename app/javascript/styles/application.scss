@@ -32,9 +32,37 @@ nav {
 $color-helper: lighten($blue, 40%);
 $color-doctor: lighten($teal, 40%);
 
-@each $key, $color in ("helper": $color-helper, "doctor": $color-doctor) {
+$user-colors: (
+  "helper": $color-helper,
+  "doctor": $color-doctor
+);
+
+$color-drug: lighten($pink, 30%);
+$color-shot: lighten($cyan, 30%);
+$color-poop: lighten($yellow, 20%);
+$color-accident: lighten($red, 30%);
+
+$incident-colors: (
+  "drug": $color-drug,
+  "shot": $color-shot,
+  "poop": $color-poop,
+  "accident": $color-accident
+);
+
+@each $key, $color in $user-colors {
   .bg-#{$key} {
-    color: darken($color, 70%);
+    color: darken($color, 50%);
+    background-color: $color;
+
+    a {
+      color: darken($color, 50%);
+    }
+  }
+}
+
+@each $key, $color in $incident-colors {
+  .bg-#{$key} {
+    color: darken($color, 50%);
     background-color: $color;
 
     a {
