@@ -49,6 +49,7 @@ class Doctor::IncidentsController < DoctorController
 
   def set_incident
     @incident = Incident.find(params[:id])
+    @sitter = @incident.user
   end
 
   def incident_params

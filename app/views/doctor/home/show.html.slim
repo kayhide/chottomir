@@ -1,7 +1,8 @@
-.list-group.mt-4
-  - @incidents.each do |incident|
-    - bg = "bg-#{incident.category.text.downcase}"
-    = link_to [:edit, :doctor, incident], class: %w(list-group-item) + [bg] do
-      = render "common/category_icon", text: incident.category.text, fw: true
-      span.ml-3 = incident.user.username
-      .float-right = incident.created_at.strftime "%m/%d %H:%M"
+.row.mt-4
+  - @sitters.each do |sitter|
+    .col-6
+      .card.text-center
+        .card-body.bg-sitter
+          h5.card-title = sitter.username
+          = link_to [:doctor, sitter, :incidents], class: %w(stretched-link) do
+            i.fas.fa-user-nurse.fa-3x
