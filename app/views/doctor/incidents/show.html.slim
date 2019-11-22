@@ -1,6 +1,17 @@
-p#notice = notice
+.row.mt-3
+  .col-6
+    .card.text-center
+      .card-body class="bg-#{@incident.category.text.downcase}"
+        h5.card-title = @incident.category.text
+        = render "common/category_icon", text: @incident.category.text, large: true
+  .col-6
+    .card
+      .card-body
+        .text-right.small = @incident.created_at.strftime "%m/%d %H:%M"
+        p = @incident.user.username
 
+.w-100.mt-3
 
-=> link_to 'Edit', [:edit, :doctor, @incident]
-'|
-=< link_to 'Back', [:doctor, :incidents]
+.card
+  textarea.form-control rows=4 readonly=true
+    = @incident.note

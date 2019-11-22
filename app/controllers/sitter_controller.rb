@@ -1,4 +1,4 @@
-class HelperController < ApplicationController
+class SitterController < ApplicationController
   before_action :authenticate!
 
   def authenticate!

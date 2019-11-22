@@ -4,5 +4,5 @@
       .card.text-center
         .card-body class="bg-#{text.downcase}"
           h5.card-title = text
-          = link_to [:new, :helper, :incident, { category: text }], class: %w(stretched-link) do
+          = link_to [:new, :sitter, :incident, { category: text }], class: %w(stretched-link) do
             = render "common/category_icon", text: text, large: true

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Helper::IncidentsController, type: :controller do
+RSpec.describe Sitter::IncidentsController, type: :controller do
   authenticate_user
 
   let(:valid_attributes) {
@@ -56,7 +56,7 @@ RSpec.describe Helper::IncidentsController, type: :controller do
 
       it "redirects to the incident list" do
         post :create, params: {incident: valid_attributes}
-        expect(response).to redirect_to([:helper, :incidents])
+        expect(response).to redirect_to([:sitter, :incidents])
       end
     end
 
@@ -87,7 +87,7 @@ RSpec.describe Helper::IncidentsController, type: :controller do
       it "redirects to the incident list" do
         incident = create :incident, user: current_user
         put :update, params: {id: incident.id, incident: valid_attributes}
-        expect(response).to redirect_to([:helper, :incidents])
+        expect(response).to redirect_to([:sitter, :incidents])
       end
     end
 
@@ -111,7 +111,7 @@ RSpec.describe Helper::IncidentsController, type: :controller do
     it "redirects to the incidents list" do
       incident = create :incident, user: current_user
       delete :destroy, params: {id: incident.id}
-      expect(response).to redirect_to([:helper, :incidents])
+      expect(response).to redirect_to([:sitter, :incidents])
     end
   end
 

@@ -11,7 +11,7 @@
 
 .w-100.mt-3
 
-= form_for [:helper, @incident] do |f|
+= form_for [:sitter, @incident] do |f|
   = f.hidden_field :category_id
   .form-group
     = f.label :note

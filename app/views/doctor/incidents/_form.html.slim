@@ -2,10 +2,10 @@
   .alert.alert-warning
     p Something is wrong
 
-.row.justify-content-center.mt-4
-  .col-6
+.row
+  .col-3
     .card.text-center
-      .card-body.bg-helper
+      .card-body class="bg-#{@incident.category.text.downcase}"
         h5.card-title = @incident.category.text
         = render "common/category_icon", text: @incident.category.text, large: true
 

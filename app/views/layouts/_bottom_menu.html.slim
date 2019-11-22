@@ -1,9 +1,19 @@
-- if current_user && [::Helper, ::Doctor].include?(controller.class.parent)
-  - if controller.class.parent == ::Helper
+- if current_user && [::Sitter, ::Doctor].include?(controller.class.module_parent)
+  - if controller.class.module_parent == ::Sitter
     nav.navbar.navbar-expand.fixed-bottom.navbar-dark.bg-dark.justify-content-between
-      = link_to [:helper, :incidents], class: %w(nav-link text-light) do
+      = link_to [:sitter, :incidents], class: %w(nav-link text-light) do
         i.fas.fa-edit.fa-2x.fa-fw
-      = link_to [:helper], class: %w(nav-link text-light) do
+      = link_to [:sitter], class: %w(nav-link text-light) do
         i.fas.fa-home.fa-2x.fa-fw
-      = link_to [:helper], class: %w(nav-link text-light) do
+      = link_to [:sitter], class: %w(nav-link text-light) do
         i.fas.fa-user-md.fa-2x.fa-fw
+
+
+  - if controller.class.module_parent == ::Doctor
+    nav.navbar.navbar-expand.fixed-bottom.navbar-dark.bg-dark.justify-content-between
+      = link_to [:doctor, :incidents], class: %w(nav-link text-light) do
+        i.fas.fa-edit.fa-2x.fa-fw
+      = link_to [:doctor], class: %w(nav-link text-light) do
+        i.fas.fa-home.fa-2x.fa-fw
+      = link_to [:doctor, :sitters], class: %w(nav-link text-light) do
+        i.fas.fa-user-nurse.fa-2x.fa-fw

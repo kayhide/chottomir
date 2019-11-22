@@ -29,11 +29,11 @@ nav {
 }
 
 
-$color-helper: lighten($blue, 40%);
+$color-sitter: lighten($blue, 40%);
 $color-doctor: lighten($teal, 40%);
 
 $user-colors: (
-  "helper": $color-helper,
+  "sitter": $color-sitter,
   "doctor": $color-doctor
 );
 

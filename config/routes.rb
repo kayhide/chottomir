@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   namespace :doctor do
     resource only: [:show], controller: :home
     resources :incidents
+    resources :sitters do
+      resources :incidents, only: [:index, :show]
+    end
   end
-  namespace :helper do
+  namespace :sitter do
     resource only: [:show], controller: :home
     resources :incidents
   end

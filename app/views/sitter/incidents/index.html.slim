@@ -1,6 +1,6 @@
 .list-group.mt-4
   - @incidents.each do |incident|
     - bg = "bg-#{incident.category.text.downcase}"
-    = link_to [:edit, :helper, incident], class: %w(list-group-item) + [bg] do
+    = link_to [:edit, :sitter, incident], class: %w(list-group-item) + [bg] do
       = render "common/category_icon", text: incident.category.text, fw: true
       .float-right = incident.created_at.strftime "%m/%d %H:%M"

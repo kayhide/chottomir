@@ -1,5 +1,5 @@
 class Doctor::IncidentsController < DoctorController
-  before_action :set_helper
+  before_action :set_sitter
   before_action :set_incident, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -43,8 +43,8 @@ class Doctor::IncidentsController < DoctorController
 
   private
 
-  def set_helper
-    @helper = User.find_by(id: params[:helper_id])
+  def set_sitter
+    @sitter = User.find_by(id: params[:sitter_id])
   end
 
   def set_incident

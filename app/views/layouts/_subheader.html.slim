@@ -1,10 +1,10 @@
-- if current_user && [::Helper, ::Doctor].include?(controller.class.parent)
+- if current_user && [::Sitter, ::Doctor].include?(controller.class.module_parent)
   .float-right.mt-2
-    - if controller.class.parent == ::Helper
-      .bg-helper.rounded.px-2
+    - if controller.class.module_parent == ::Sitter
+      .bg-sitter.rounded.px-2
         i.fas.fa-user-nurse.mr-2
         = current_user.username
-    - if controller.class.parent == ::Doctor
+    - if controller.class.module_parent == ::Doctor
       .bg-doctor.rounded.px-2
         i.fas.fa-user-md.mr-2
         = current_user.username
