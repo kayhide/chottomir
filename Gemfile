@@ -9,7 +9,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'pry-doc'
 gem 'pry-rails'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'rails-i18n'
 gem 'slim-rails'
 gem 'turbolinks', '~> 5'
